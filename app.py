@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import os
 import json
 import re
@@ -191,7 +190,7 @@ def fetch_image_bytes(img_url, base_url=None):
     if not requests:
         return None
     try:
-        resp = requests.get(img_url, timeout=120)  # Increased timeout
+        resp = requests.get(img_url, timeout=15)  # 120 ko 15-20 sec kar dein
         resp.raise_for_status()
         return resp.content
     except Exception:
